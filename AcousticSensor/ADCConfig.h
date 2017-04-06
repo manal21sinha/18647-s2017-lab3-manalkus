@@ -7,7 +7,7 @@
  * Device Parameters
  */
 
-#define DEVICE_ID "PDue0000"    // use this to uniquely identify your device (max of 8 characters)
+#define DEVICE_ID "PDue2104"    // use this to uniquely identify your device (max of 8 characters)
 
 /*
  * Application Parameters
@@ -16,7 +16,7 @@
 // TODO: Update these values to the proper network / server IP
 #define WIFI_SSID "PowerDue"
 #define WIFI_PASS "powerdue"
-#define SERVER_IP "10.230.12.1"  // typically the IP of your Laptop (e.g. "10.230.12.1")
+#define SERVER_IP "10.230.12.42"  // typically the IP of your Laptop (e.g. "10.230.12.1")
 
 /*
  * Clock parameters
@@ -33,7 +33,7 @@
 #if MASTER_CLOCK == 0
   // TODO: If this is a slave clock, this must be defined properly
   // Set this to the IP Address of your Master Clock
-  #define MASTER_CLOCK_IP ""    // e.g. "10.230.12.10"
+  #define MASTER_CLOCK_IP "10.230.12.4"    // e.g. "10.230.12.10"
 #endif
 
 #define SYNC_FREQUENCY  10000   // Time period between NTP synchronization trials (in milliseconds)
