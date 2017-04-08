@@ -7,7 +7,7 @@
  * Device Parameters
  */
 
-#define DEVICE_ID "PDue2104"    // use this to uniquely identify your device (max of 8 characters)
+#define DEVICE_ID "PDueSlv1"    // use this to uniquely identify your device (max of 8 characters)
 
 /*
  * Application Parameters
@@ -25,7 +25,7 @@
 // This defines whether this device is the master clock or not
 // 0 - this is a slave clock (see below for extra parameters)
 // 1 - this is the master clock
-#define MASTER_CLOCK 1
+#define MASTER_CLOCK 0
 
 // The udp port to use for synchronization
 #define SYNC_PORT 12345         // no need to modify. must be consistent across all devices
@@ -36,7 +36,7 @@
   #define MASTER_CLOCK_IP "10.230.12.4"    // e.g. "10.230.12.10"
 #endif
 
-#define SYNC_FREQUENCY  10000   // Time period between NTP synchronization trials (in milliseconds)
+#define SYNC_FREQUENCY  5000   // Time period between NTP synchronization trials (in milliseconds)
 
 #define NTP_TASK_PRIORITY   1   // priority of NTP synchronization tasks
 
@@ -45,7 +45,7 @@
  */
  
 // TODO: Modify the parameters below to suit your application needs
-#define ADC_SAMPLE_RATE 1000    // Sampling Rate in Hz of the ADC Sampler
+#define ADC_SAMPLE_RATE 1000 * 10    // Sampling Rate in Hz of the ADC Sampler
 
 #define NUM_BUFFERS   8         // How many buffers should the ADC Sampler keep track of?
 
