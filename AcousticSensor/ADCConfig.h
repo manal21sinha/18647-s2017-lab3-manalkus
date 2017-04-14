@@ -7,7 +7,7 @@
  * Device Parameters
  */
 
-#define DEVICE_ID "PDueSlv1"    // use this to uniquely identify your device (max of 8 characters)
+#define DEVICE_ID "PDue2104"    // use this to uniquely identify your device (max of 8 characters)
 
 /*
  * Application Parameters
@@ -25,7 +25,7 @@
 // This defines whether this device is the master clock or not
 // 0 - this is a slave clock (see below for extra parameters)
 // 1 - this is the master clock
-#define MASTER_CLOCK 0
+#define MASTER_CLOCK 1
 
 // The udp port to use for synchronization
 #define SYNC_PORT 12345         // no need to modify. must be consistent across all devices
@@ -33,25 +33,25 @@
 #if MASTER_CLOCK == 0
   // TODO: If this is a slave clock, this must be defined properly
   // Set this to the IP Address of your Master Clock
-  #define MASTER_CLOCK_IP "10.230.12.4"    // e.g. "10.230.12.10"
+  #define MASTER_CLOCK_IP "10.230.12.11"    // e.g. "10.230.12.10"
 #endif
 
-#define SYNC_FREQUENCY  5000   // Time period between NTP synchronization trials (in milliseconds)
+#define SYNC_FREQUENCY  3000  // Time period between NTP synchronization trials (in milliseconds)
 
-#define NTP_TASK_PRIORITY   1   // priority of NTP synchronization tasks
+#define NTP_TASK_PRIORITY   3   // priority of NTP synchronization tasks
 
 /*
  *  ADCSampler parameters
  */
  
 // TODO: Modify the parameters below to suit your application needs
-#define ADC_SAMPLE_RATE 1000 * 10    // Sampling Rate in Hz of the ADC Sampler
+#define ADC_SAMPLE_RATE 1000 * 34.3  // Sampling Rate in Hz of the ADC Sampler
 
-#define NUM_BUFFERS   8         // How many buffers should the ADC Sampler keep track of?
+#define NUM_BUFFERS   4         // How many buffers should the ADC Sampler keep track of?
 
 #define BUFFER_SIZE   256       // How many samples per buffer should the DMA fill up
 
-#define BUFFERS_TO_SEND 4       // How many buffers to send to the visualizer
+#define BUFFERS_TO_SEND  4      // How many buffers to send to the visualizer
 
 /*
  * ADCTrigger parameters
@@ -59,7 +59,7 @@
  
 #define WINDOW_COUNT 8          // How many signal windows to keep track of
 #define MIN_WINDOW_COUNT 24     // How many signal windows to ignore on start up before enabling triggering
-#define TRIGGER_DEFAULT_STD_DISTANCE   20.0f  // default std distance from mean to consider an event
+#define TRIGGER_DEFAULT_STD_DISTANCE   30.0f  // default std distance from mean to consider an event
 
 /*
  * Do not modify the following parameters

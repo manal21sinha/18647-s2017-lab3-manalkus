@@ -113,14 +113,6 @@ void vNtpSlaveReceiveTask(void *arg){
     int offset = ((t1-t0) + (t2-t3))/2;
     int delay = ((t3-t0) - (t2-t1))/2;
     
-//    PRINT_DEBUG("t0: ");
-//    PRINT_DEBUG(t0);
-//    PRINT_DEBUG("t1: ");
-//    PRINT_DEBUG(t1);
-//    PRINT_DEBUG("t2: ");
-//    PRINT_DEBUG(t2);
-//    PRINT_DEBUG("t3: ");
-//    PRINT_DEBUG(t3);
     PRINT_DEBUG("Offset: ");
     PRINT_DEBUG(offset);
     PRINT_DEBUG(" Delay: ");
@@ -128,8 +120,8 @@ void vNtpSlaveReceiveTask(void *arg){
     
     // adjust the clock based on computed offset an delay
     // TODO: how do we choose when to adjust our clock?
-    if(delay < 50){
-      PRINT_DEBUGLN("Adjusting...");
+    if (delay < 300){
+      PRINT_DEBUGLN("Adjusting clock...");
       ADCClock.addOffset(offset, delay);
     }
   }
